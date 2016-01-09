@@ -112,7 +112,7 @@ C    +  'num_threads = ',int(omp_get_num_threads())
 C      k=mexPrintf(line//achar(13))
 
 C     Fork a team of threads giving them their own copies of variables
-!$OMP PARALLEL PRIVATE(NTHREADS, TID) NUM_THREADS(50)
+!$OMP PARALLEL NUM_THREADS(50) PRIVATE(NTHREADS, TID)
 C     Obtain thread number
       TID = OMP_GET_THREAD_NUM()
       PRINT *, 'Hello World from thread = ', TID
@@ -140,6 +140,6 @@ C     END IF
 C     All threads join master thread and disband
 !$OMP END PARALLEL
 C     NTHREADS = OMP_GET_NUM_THREADS()
-      y_output = 1.0 * NTHREADS + 0.004
+      y_output = 1.0 * NTHREADS + 0.005
       return
       end
