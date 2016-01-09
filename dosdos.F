@@ -121,7 +121,7 @@ C     Obtain thread number
 
 C     Only master thread does this
 C     IF (TID .EQ. 0) THEN
-C       NTHREADS = OMP_GET_NUM_THREADS()
+        NTHREADS = OMP_GET_NUM_THREADS()
 C       PRINT *, 'Number of threads = ', NTHREADS
 C       write(line,'(a,i0)')
 C    +  'Number of thread = ', NTHREADS
